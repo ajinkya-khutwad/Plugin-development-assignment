@@ -161,7 +161,21 @@ class Wp_Book {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'init', $plugin_admin, 'custom_post_type' );
+		
+		// action hook for custom post type book.
+		$this->loader->add_action( 'init', $plugin_admin, 'wp1_book_cpt' );
+
+		// action hook for custom taxonomy.
+		$this->loader->add_action( 'init', $plugin_admin, 'wp1_register_taxonomy' );
+
+		// action hook for registering the custom table named bookmeta.
+		$this->loader->add_action( 'plugins_loaded', $plugin_admin, 'wp1_register_bookmeta_table' );
+
+		// action hook for custom metabox.
+		$this->loader->add_action( 'add_meta_boxes_book', $plugin_admin, 'wp1_add_custom_meta_box' );
+
+		// action hook save meta data.
+		$this->loader->add_action( 'save_post', $plugin_admin, 'wp1_save_custom_meta_box', 10, 2 );
 
 	}
 

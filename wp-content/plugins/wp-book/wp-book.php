@@ -63,7 +63,8 @@ define( 'WP_BOOK_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
  */
 function activate_wp_book() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-book-activator.php';
-	Wp_Book_Activator::activate();
+	$activate = new Wp_Book_Activator();
+	$activate->activate();
 }
 
 /**
@@ -100,7 +101,3 @@ function run_wp_book() {
 
 }
 run_wp_book();
-
-
-
-
