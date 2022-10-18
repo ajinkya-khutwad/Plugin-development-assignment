@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -21,7 +20,7 @@
  *
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
- *
+
  * @since      1.0.0
  * @package    Wp_Book
  * @subpackage Wp_Book/includes
@@ -78,7 +77,6 @@ class Wp_Book {
 		} else {
 			$this->plugin_name = 'wp-book';
 		}
-		
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
@@ -161,7 +159,6 @@ class Wp_Book {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-		
 		// action hook for custom post type book.
 		$this->loader->add_action( 'init', $plugin_admin, 'wp1_book_cpt' );
 
@@ -176,6 +173,11 @@ class Wp_Book {
 
 		// action hook save meta data.
 		$this->loader->add_action( 'save_post', $plugin_admin, 'wp1_save_custom_meta_box', 10, 2 );
+
+		// action hook add admin settings.
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'wp1_add_admin_menu' );
+		// action hook to register the settings for book.
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_book_settings' );
 
 	}
 
@@ -192,6 +194,8 @@ class Wp_Book {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		// Create Shortcode named book to show information about book.
+		add_shortcode( 'book', array( $plugin_public, 'load_book_content' ) );
 
 	}
 

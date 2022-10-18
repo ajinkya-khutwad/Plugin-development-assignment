@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -44,13 +43,13 @@ class Wp_Book_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of this plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 
 	}
 
@@ -101,147 +100,152 @@ class Wp_Book_Admin {
 	}
 
 
-	// Register Custom Post Type
-function wp1_book_cpt() {
-
-	$labels = array(
-		'name'                  => _x( 'Books', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'Book', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Book', 'text_domain' ),
-		'name_admin_bar'        => __( 'Book', 'text_domain' ),
-		'archives'              => __( 'Item Archives', 'text_domain' ),
-		'attributes'            => __( 'Item Attributes', 'text_domain' ),
-		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
-		'all_items'             => __( 'All Books', 'text_domain' ),
-		'add_new_item'          => __( 'Add New Book', 'text_domain' ),
-		'add_new'               => __( 'Add New Book', 'text_domain' ),
-		'new_item'              => __( 'New Book', 'text_domain' ),
-		'edit_item'             => __( 'Edit Book', 'text_domain' ),
-		'update_item'           => __( 'Update Book', 'text_domain' ),
-		'view_item'             => __( 'View Book', 'text_domain' ),
-		'view_items'            => __( 'View Books', 'text_domain' ),
-		'search_items'          => __( 'Search Book', 'text_domain' ),
-		'not_found'             => __( 'Not found', 'text_domain' ),
-		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
-		'featured_image'        => __( 'Featured Image', 'text_domain' ),
-		'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
-		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
-		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
-		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
-		'items_list'            => __( 'Books list', 'text_domain' ),
-		'items_list_navigation' => __( 'Books list navigation', 'text_domain' ),
-		'filter_items_list'     => __( 'Filter Books list', 'text_domain' ),
-	);
-	$args = array(
-		'label'                 => __( 'Book', 'text_domain' ),
-		'description'           => __( 'Post Type Description', 'text_domain' ),
-		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor' ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
-		'hierarchical'          => false,
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_menu'          => true,
-		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-book',
-		'show_in_admin_bar'     => true,
-		'show_in_nav_menus'     => true,
-		'can_export'            => true,
-		'has_archive'           => true,
-		'exclude_from_search'   => false,
-		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
-	);
-	register_post_type( 'book', $args );
-
-}
-
-
-// Register Custom Taxonomy
-function wp1_register_taxonomy() {
-
-	$labels = array(
-		'name'                       => _x( 'Book Categories', 'Taxonomy General Name', 'text_domain' ),
-		'singular_name'              => _x( 'Book Category', 'Taxonomy Singular Name', 'text_domain' ),
-		'menu_name'                  => __( 'Book Category', 'text_domain' ),
-		'all_items'                  => __( 'All Items', 'text_domain' ),
-		'parent_item'                => __( 'Parent Item', 'text_domain' ),
-		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
-		'new_item_name'              => __( 'New Item Name', 'text_domain' ),
-		'add_new_item'               => __( 'Add New Item', 'text_domain' ),
-		'edit_item'                  => __( 'Edit Item', 'text_domain' ),
-		'update_item'                => __( 'Update Item', 'text_domain' ),
-		'view_item'                  => __( 'View Item', 'text_domain' ),
-		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
-		'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
-		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
-		'popular_items'              => __( 'Popular Items', 'text_domain' ),
-		'search_items'               => __( 'Search Items', 'text_domain' ),
-		'not_found'                  => __( 'Not Found', 'text_domain' ),
-		'no_terms'                   => __( 'No items', 'text_domain' ),
-		'items_list'                 => __( 'Items list', 'text_domain' ),
-		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
-	);
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => true,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
-	);
-	register_taxonomy( 'book-category', array( 'post', 'book' ), $args );
-
-
-	$labels = array(
-		'name'                       => _x( 'Book Tags', 'Taxonomy General Name', 'text_domain' ),
-		'singular_name'              => _x( 'Book Tag', 'Taxonomy Singular Name', 'text_domain' ),
-		'menu_name'                  => __( 'Book Tag', 'text_domain' ),
-		'all_items'                  => __( 'All Items', 'text_domain' ),
-		'parent_item'                => __( 'Parent Item', 'text_domain' ),
-		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
-		'new_item_name'              => __( 'New Item Name', 'text_domain' ),
-		'add_new_item'               => __( 'Add New Item', 'text_domain' ),
-		'edit_item'                  => __( 'Edit Item', 'text_domain' ),
-		'update_item'                => __( 'Update Item', 'text_domain' ),
-		'view_item'                  => __( 'View Item', 'text_domain' ),
-		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
-		'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
-		'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
-		'popular_items'              => __( 'Popular Items', 'text_domain' ),
-		'search_items'               => __( 'Search Items', 'text_domain' ),
-		'not_found'                  => __( 'Not Found', 'text_domain' ),
-		'no_terms'                   => __( 'No items', 'text_domain' ),
-		'items_list'                 => __( 'Items list', 'text_domain' ),
-		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
-	);
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => false,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => true,
-	);
-	register_taxonomy( 'book-tag', array( 'post', 'book' ), $args );
-
-}
-
-
-/**
-	 * Add meta box to 'book' custom post type
+	/**
+	 * Register Custom Post Type
 	 */
-	public function wp1_add_custom_meta_box() {
-		add_meta_box( 'custom-books-info', 'Books Info', array( $this, 'custom_meta_box_markup' ), array( 'book' ), 'normal', 'default');
+	public function wp1_book_cpt() {
+
+		$labels = array(
+			'name'                  => _x( 'Books', 'Post Type General Name', 'text_domain' ),
+			'singular_name'         => _x( 'Book', 'Post Type Singular Name', 'text_domain' ),
+			'menu_name'             => __( 'Book', 'text_domain' ),
+			'name_admin_bar'        => __( 'Book', 'text_domain' ),
+			'archives'              => __( 'Item Archives', 'text_domain' ),
+			'attributes'            => __( 'Item Attributes', 'text_domain' ),
+			'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+			'all_items'             => __( 'All Books', 'text_domain' ),
+			'add_new_item'          => __( 'Add New Book', 'text_domain' ),
+			'add_new'               => __( 'Add New Book', 'text_domain' ),
+			'new_item'              => __( 'New Book', 'text_domain' ),
+			'edit_item'             => __( 'Edit Book', 'text_domain' ),
+			'update_item'           => __( 'Update Book', 'text_domain' ),
+			'view_item'             => __( 'View Book', 'text_domain' ),
+			'view_items'            => __( 'View Books', 'text_domain' ),
+			'search_items'          => __( 'Search Book', 'text_domain' ),
+			'not_found'             => __( 'Not found', 'text_domain' ),
+			'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+			'featured_image'        => __( 'Featured Image', 'text_domain' ),
+			'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+			'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+			'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+			'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+			'items_list'            => __( 'Books list', 'text_domain' ),
+			'items_list_navigation' => __( 'Books list navigation', 'text_domain' ),
+			'filter_items_list'     => __( 'Filter Books list', 'text_domain' ),
+		);
+		$args   = array(
+			'label'               => __( 'Book', 'text_domain' ),
+			'description'         => __( 'Post Type Description', 'text_domain' ),
+			'labels'              => $labels,
+			'supports'            => array( 'title', 'editor' ),
+			'taxonomies'          => array( 'category', 'post_tag' ),
+			'hierarchical'        => false,
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'menu_position'       => 5,
+			'menu_icon'           => 'dashicons-book',
+			'show_in_admin_bar'   => true,
+			'show_in_nav_menus'   => true,
+			'can_export'          => true,
+			'has_archive'         => true,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'capability_type'     => 'page',
+		);
+		register_post_type( 'book', $args );
+
 	}
 
 
-	// Registers the custom table named bookmeta
-	function wp1_register_bookmeta_table() {
-		global $wpdb;	
+	/**
+	 * Register Custom Taxonomy
+	 */
+	public function wp1_register_taxonomy() {
+
+		$labels = array(
+			'name'                       => _x( 'Book Categories', 'Taxonomy General Name', 'text_domain' ),
+			'singular_name'              => _x( 'Book Category', 'Taxonomy Singular Name', 'text_domain' ),
+			'menu_name'                  => __( 'Book Category', 'text_domain' ),
+			'all_items'                  => __( 'All Items', 'text_domain' ),
+			'parent_item'                => __( 'Parent Item', 'text_domain' ),
+			'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+			'new_item_name'              => __( 'New Item Name', 'text_domain' ),
+			'add_new_item'               => __( 'Add New Item', 'text_domain' ),
+			'edit_item'                  => __( 'Edit Item', 'text_domain' ),
+			'update_item'                => __( 'Update Item', 'text_domain' ),
+			'view_item'                  => __( 'View Item', 'text_domain' ),
+			'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+			'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
+			'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+			'popular_items'              => __( 'Popular Items', 'text_domain' ),
+			'search_items'               => __( 'Search Items', 'text_domain' ),
+			'not_found'                  => __( 'Not Found', 'text_domain' ),
+			'no_terms'                   => __( 'No items', 'text_domain' ),
+			'items_list'                 => __( 'Items list', 'text_domain' ),
+			'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'hierarchical'      => true,
+			'public'            => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'show_tagcloud'     => true,
+		);
+		register_taxonomy( 'book-category', array( 'post', 'book' ), $args );
+
+		$labels = array(
+			'name'                       => _x( 'Book Tags', 'Taxonomy General Name', 'text_domain' ),
+			'singular_name'              => _x( 'Book Tag', 'Taxonomy Singular Name', 'text_domain' ),
+			'menu_name'                  => __( 'Book Tag', 'text_domain' ),
+			'all_items'                  => __( 'All Items', 'text_domain' ),
+			'parent_item'                => __( 'Parent Item', 'text_domain' ),
+			'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+			'new_item_name'              => __( 'New Item Name', 'text_domain' ),
+			'add_new_item'               => __( 'Add New Item', 'text_domain' ),
+			'edit_item'                  => __( 'Edit Item', 'text_domain' ),
+			'update_item'                => __( 'Update Item', 'text_domain' ),
+			'view_item'                  => __( 'View Item', 'text_domain' ),
+			'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+			'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
+			'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
+			'popular_items'              => __( 'Popular Items', 'text_domain' ),
+			'search_items'               => __( 'Search Items', 'text_domain' ),
+			'not_found'                  => __( 'Not Found', 'text_domain' ),
+			'no_terms'                   => __( 'No items', 'text_domain' ),
+			'items_list'                 => __( 'Items list', 'text_domain' ),
+			'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+		);
+		$args   = array(
+			'labels'            => $labels,
+			'hierarchical'      => false,
+			'public'            => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_nav_menus' => true,
+			'show_tagcloud'     => true,
+		);
+		register_taxonomy( 'book-tag', array( 'post', 'book' ), $args );
+
+	}
+
+
+	/**
+	 * Add meta box to 'book' custom post type
+	 */
+	public function wp1_add_custom_meta_box() {
+		add_meta_box( 'custom-books-info', 'Books Info', array( $this, 'custom_meta_box_markup' ), array( 'book' ), 'normal', 'default' );
+	}
+
+
+	/**
+	 * Registers the custom table named bookmeta
+	 */
+	public function wp1_register_bookmeta_table() {
+		global $wpdb;
 		$wpdb->bookmeta = $wpdb->prefix . 'bookmeta';
 	}
 
@@ -251,10 +255,10 @@ function wp1_register_taxonomy() {
 	 * @since    1.0.0
 	 * @param      object $post       Contains all information about post.
 	 */
-	public function custom_meta_box_markup( $post) {
-		
+	public function custom_meta_box_markup( $post ) {
+
 		$get_book_metadata = get_metadata( 'book', $post->ID ); // Retrieves the value of a metadata field for the specified object type and ID.
-		
+
 		if ( count( $get_book_metadata ) > 0 ) {
 			$author    = $get_book_metadata['author_name'][0];
 			$price     = $get_book_metadata['price'][0];
@@ -306,7 +310,7 @@ function wp1_register_taxonomy() {
 		<?php
 
 	}
-	
+
 
 	/**
 	 * Stores all metadata of custom post type to custom table called wp_bookmeta and wp_book
@@ -382,6 +386,73 @@ function wp1_register_taxonomy() {
 		update_metadata( 'book', $post_id, 'year', $year );
 		update_metadata( 'book', $post_id, 'edition', $edition );
 		update_metadata( 'book', $post_id, 'url', $url );
-		
+
+	}
+
+	/**
+	 * Add admin menu for our plugin
+	 */
+	public function wp1_add_admin_menu() {
+
+		// Top level menu.
+		add_menu_page( 'Booksmenu', 'Booksmenu', 'manage_options', 'books-menu', array( $this, 'wp1_admin_page_display' ), 'dashicons-book-alt', 76 );
+	}
+
+	/**
+	 * Admin menu display function
+	 */
+	public function wp1_admin_page_display() {
+		ob_start();
+		?>
+		<div class="wrap">
+		<?php
+		if ( isset( $_GET['settings-updated'] ) && true == $_GET['settings-updated'] ) {
+			?>
+			<div class="notice notice-success"><p>Settings Saved Successfully</p></div>
+			<?php
+		}
+		?>
+			<h2>Book Settings</h2>
+			<p>Manages all the settings of book plugin</p>
+
+			<form method="post" action="options.php">
+			   <?php settings_fields( 'book_settings_group' ); ?>
+				<table class="form-table">
+					<tbody>
+						<tr>
+							<th scope="row"><label for="book_currency">Currency</label></th>
+						   <?php $currency_option = get_option( 'book_currency' ); ?>
+							<td>
+								<select name="book_currency" id="book_currency" class="regular-text">
+									<option value="Indian Rupees" <?php selected( $currency_option, 'Indian Rupees' ); ?> >Indian Rupees</option>
+									<option value="US Dollar" <?php selected( $currency_option, 'US Dollar' ); ?> >US Dollar</option>
+									<option value="UK Pound Sterling" <?php selected( $currency_option, 'UK Pound Sterling' ); ?> >UK Pound Sterling</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><label for="book_no_pages">No. of Books (per page)</label></th>
+							<td>
+								<input type="text" class="regular-text" name="book_no_pages" id="book_no_pages" placeholder="No. of Books" value="<?php echo get_option( 'book_no_pages' ); ?>">
+							</td>
+						</tr>
+						<tr>
+							<td><input type="submit" value="Save Settings" class="button-primary"></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+		<?php
+		echo ob_get_clean();
+	}
+
+
+	/**
+	 *  Registers the settings group for each input field
+	 */
+	public function register_book_settings() {
+		register_setting( 'book_settings_group', 'book_currency' );
+		register_setting( 'book_settings_group', 'book_no_pages' );
 	}
 }
