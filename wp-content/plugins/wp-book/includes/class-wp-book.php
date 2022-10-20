@@ -207,6 +207,16 @@ class Wp_Book {
 		// action hook to display custom widget which shows books of selected category.
 		add_action( 'widgets_init', 'wp1_book_widget_init' );
 
+		/**
+		 * Action hook to make international localize
+		 */
+		add_action(
+			'plugins_loaded',
+			function () {
+				load_plugin_textdomain( 'wpb', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+			}
+		);
+
 	}
 
 	/**
