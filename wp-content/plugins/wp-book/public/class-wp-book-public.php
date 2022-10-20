@@ -202,14 +202,14 @@ class Wp_Book_Public {
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-				$currency                      = get_option( 'book_currency' );
-				$book_metadata                 = get_metadata( 'book', get_the_ID() );
-				$currency_in_no                = get_metadata( 'book', get_the_ID(), 'price', true );
+				$currency                        = get_option( 'book_currency' );
+				$book_metadata                   = get_metadata( 'book', get_the_ID() );
+				$currency_in_no                  = get_metadata( 'book', get_the_ID(), 'price', true );
 				$book_metadata['author_name'][0] = isset( $book_metadata['author_name'][0] ) ? $book_metadata['author_name'][0] : 'N.A';
-				$book_metadata['publisher'][0] = isset( $book_metadata['publisher'][0] ) ? $book_metadata['publisher'][0] : 'N.A';
-				$book_metadata['year'][0]      = isset( $book_metadata['year'][0] ) ? $book_metadata['year'][0] : 'N.A';
-				$book_metadata['edition'][0]   = isset( $book_metadata['edition'][0] ) ? $book_metadata['edition'][0] : 'N.A';
-				$book_metadata['url'][0]       = isset( $book_metadata['url'][0] ) ? $book_metadata['url'][0] : 'N.A';
+				$book_metadata['publisher'][0]   = isset( $book_metadata['publisher'][0] ) ? $book_metadata['publisher'][0] : 'N.A';
+				$book_metadata['year'][0]        = isset( $book_metadata['year'][0] ) ? $book_metadata['year'][0] : 'N.A';
+				$book_metadata['edition'][0]     = isset( $book_metadata['edition'][0] ) ? $book_metadata['edition'][0] : 'N.A';
+				$book_metadata['url'][0]         = isset( $book_metadata['url'][0] ) ? $book_metadata['url'][0] : 'N.A';
 				if ( 'US Dollar' === $currency ) {
 					$price = '$' . (int) $currency_in_no * 0.013;
 				}

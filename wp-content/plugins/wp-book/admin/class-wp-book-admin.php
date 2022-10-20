@@ -106,37 +106,37 @@ class Wp_Book_Admin {
 	public function wp1_book_cpt() {
 
 		$labels = array(
-			'name'                  => _x( 'Books', 'Post Type General Name', 'text_domain' ),
-			'singular_name'         => _x( 'Book', 'Post Type Singular Name', 'text_domain' ),
-			'menu_name'             => __( 'Book', 'text_domain' ),
-			'name_admin_bar'        => __( 'Book', 'text_domain' ),
-			'archives'              => __( 'Item Archives', 'text_domain' ),
-			'attributes'            => __( 'Item Attributes', 'text_domain' ),
-			'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
-			'all_items'             => __( 'All Books', 'text_domain' ),
-			'add_new_item'          => __( 'Add New Book', 'text_domain' ),
-			'add_new'               => __( 'Add New Book', 'text_domain' ),
-			'new_item'              => __( 'New Book', 'text_domain' ),
-			'edit_item'             => __( 'Edit Book', 'text_domain' ),
-			'update_item'           => __( 'Update Book', 'text_domain' ),
-			'view_item'             => __( 'View Book', 'text_domain' ),
-			'view_items'            => __( 'View Books', 'text_domain' ),
-			'search_items'          => __( 'Search Book', 'text_domain' ),
-			'not_found'             => __( 'Not found', 'text_domain' ),
-			'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
-			'featured_image'        => __( 'Featured Image', 'text_domain' ),
-			'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
-			'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
-			'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
-			'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
-			'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
-			'items_list'            => __( 'Books list', 'text_domain' ),
-			'items_list_navigation' => __( 'Books list navigation', 'text_domain' ),
-			'filter_items_list'     => __( 'Filter Books list', 'text_domain' ),
+			'name'                  => _x( 'Books', 'Post Type General Name', 'wp-book' ),
+			'singular_name'         => _x( 'Book', 'Post Type Singular Name', 'wp-book' ),
+			'menu_name'             => __( 'Book', 'wp-book' ),
+			'name_admin_bar'        => __( 'Book', 'wp-book' ),
+			'archives'              => __( 'Item Archives', 'wp-book' ),
+			'attributes'            => __( 'Item Attributes', 'wp-book' ),
+			'parent_item_colon'     => __( 'Parent Item:', 'wp-book' ),
+			'all_items'             => __( 'All Books', 'wp-book' ),
+			'add_new_item'          => __( 'Add New Book', 'wp-book' ),
+			'add_new'               => __( 'Add New Book', 'wp-book' ),
+			'new_item'              => __( 'New Book', 'wp-book' ),
+			'edit_item'             => __( 'Edit Book', 'wp-book' ),
+			'update_item'           => __( 'Update Book', 'wp-book' ),
+			'view_item'             => __( 'View Book', 'wp-book' ),
+			'view_items'            => __( 'View Books', 'wp-book' ),
+			'search_items'          => __( 'Search Book', 'wp-book' ),
+			'not_found'             => __( 'Not found', 'wp-book' ),
+			'not_found_in_trash'    => __( 'Not found in Trash', 'wp-book' ),
+			'featured_image'        => __( 'Featured Image', 'wp-book' ),
+			'set_featured_image'    => __( 'Set featured image', 'wp-book' ),
+			'remove_featured_image' => __( 'Remove featured image', 'wp-book' ),
+			'use_featured_image'    => __( 'Use as featured image', 'wp-book' ),
+			'insert_into_item'      => __( 'Insert into item', 'wp-book' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this item', 'wp-book' ),
+			'items_list'            => __( 'Books list', 'wp-book' ),
+			'items_list_navigation' => __( 'Books list navigation', 'wp-book' ),
+			'filter_items_list'     => __( 'Filter Books list', 'wp-book' ),
 		);
 		$args   = array(
-			'label'               => __( 'Book', 'text_domain' ),
-			'description'         => __( 'Post Type Description', 'text_domain' ),
+			'label'               => __( 'Book', 'wp-book' ),
+			'description'         => __( 'Post Type Description', 'wp-book' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'editor' ),
 			'taxonomies'          => array( 'category', 'post_tag' ),
@@ -165,26 +165,26 @@ class Wp_Book_Admin {
 	public function wp1_register_taxonomy() {
 
 		$labels = array(
-			'name'                       => _x( 'Book Categories', 'Taxonomy General Name', 'text_domain' ),
-			'singular_name'              => _x( 'Book Category', 'Taxonomy Singular Name', 'text_domain' ),
-			'menu_name'                  => __( 'Book Category', 'text_domain' ),
-			'all_items'                  => __( 'All Items', 'text_domain' ),
-			'parent_item'                => __( 'Parent Item', 'text_domain' ),
-			'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
-			'new_item_name'              => __( 'New Item Name', 'text_domain' ),
-			'add_new_item'               => __( 'Add New Item', 'text_domain' ),
-			'edit_item'                  => __( 'Edit Item', 'text_domain' ),
-			'update_item'                => __( 'Update Item', 'text_domain' ),
-			'view_item'                  => __( 'View Item', 'text_domain' ),
-			'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
-			'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
-			'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
-			'popular_items'              => __( 'Popular Items', 'text_domain' ),
-			'search_items'               => __( 'Search Items', 'text_domain' ),
-			'not_found'                  => __( 'Not Found', 'text_domain' ),
-			'no_terms'                   => __( 'No items', 'text_domain' ),
-			'items_list'                 => __( 'Items list', 'text_domain' ),
-			'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+			'name'                       => _x( 'Book Categories', 'Taxonomy General Name', 'wp-book' ),
+			'singular_name'              => _x( 'Book Category', 'Taxonomy Singular Name', 'wp-book' ),
+			'menu_name'                  => __( 'Book Category', 'wp-book' ),
+			'all_items'                  => __( 'All Items', 'wp-book' ),
+			'parent_item'                => __( 'Parent Item', 'wp-book' ),
+			'parent_item_colon'          => __( 'Parent Item:', 'wp-book' ),
+			'new_item_name'              => __( 'New Item Name', 'wp-book' ),
+			'add_new_item'               => __( 'Add New Item', 'wp-book' ),
+			'edit_item'                  => __( 'Edit Item', 'wp-book' ),
+			'update_item'                => __( 'Update Item', 'wp-book' ),
+			'view_item'                  => __( 'View Item', 'wp-book' ),
+			'separate_items_with_commas' => __( 'Separate items with commas', 'wp-book' ),
+			'add_or_remove_items'        => __( 'Add or remove items', 'wp-book' ),
+			'choose_from_most_used'      => __( 'Choose from the most used', 'wp-book' ),
+			'popular_items'              => __( 'Popular Items', 'wp-book' ),
+			'search_items'               => __( 'Search Items', 'wp-book' ),
+			'not_found'                  => __( 'Not Found', 'wp-book' ),
+			'no_terms'                   => __( 'No items', 'wp-book' ),
+			'items_list'                 => __( 'Items list', 'wp-book' ),
+			'items_list_navigation'      => __( 'Items list navigation', 'wp-book' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -198,26 +198,26 @@ class Wp_Book_Admin {
 		register_taxonomy( 'book-category', array( 'post', 'book' ), $args );
 
 		$labels = array(
-			'name'                       => _x( 'Book Tags', 'Taxonomy General Name', 'text_domain' ),
-			'singular_name'              => _x( 'Book Tag', 'Taxonomy Singular Name', 'text_domain' ),
-			'menu_name'                  => __( 'Book Tag', 'text_domain' ),
-			'all_items'                  => __( 'All Items', 'text_domain' ),
-			'parent_item'                => __( 'Parent Item', 'text_domain' ),
-			'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
-			'new_item_name'              => __( 'New Item Name', 'text_domain' ),
-			'add_new_item'               => __( 'Add New Item', 'text_domain' ),
-			'edit_item'                  => __( 'Edit Item', 'text_domain' ),
-			'update_item'                => __( 'Update Item', 'text_domain' ),
-			'view_item'                  => __( 'View Item', 'text_domain' ),
-			'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
-			'add_or_remove_items'        => __( 'Add or remove items', 'text_domain' ),
-			'choose_from_most_used'      => __( 'Choose from the most used', 'text_domain' ),
-			'popular_items'              => __( 'Popular Items', 'text_domain' ),
-			'search_items'               => __( 'Search Items', 'text_domain' ),
-			'not_found'                  => __( 'Not Found', 'text_domain' ),
-			'no_terms'                   => __( 'No items', 'text_domain' ),
-			'items_list'                 => __( 'Items list', 'text_domain' ),
-			'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+			'name'                       => _x( 'Book Tags', 'Taxonomy General Name', 'wp-book' ),
+			'singular_name'              => _x( 'Book Tag', 'Taxonomy Singular Name', 'wp-book' ),
+			'menu_name'                  => __( 'Book Tag', 'wp-book' ),
+			'all_items'                  => __( 'All Items', 'wp-book' ),
+			'parent_item'                => __( 'Parent Item', 'wp-book' ),
+			'parent_item_colon'          => __( 'Parent Item:', 'wp-book' ),
+			'new_item_name'              => __( 'New Item Name', 'wp-book' ),
+			'add_new_item'               => __( 'Add New Item', 'wp-book' ),
+			'edit_item'                  => __( 'Edit Item', 'wp-book' ),
+			'update_item'                => __( 'Update Item', 'wp-book' ),
+			'view_item'                  => __( 'View Item', 'wp-book' ),
+			'separate_items_with_commas' => __( 'Separate items with commas', 'wp-book' ),
+			'add_or_remove_items'        => __( 'Add or remove items', 'wp-book' ),
+			'choose_from_most_used'      => __( 'Choose from the most used', 'wp-book' ),
+			'popular_items'              => __( 'Popular Items', 'wp-book' ),
+			'search_items'               => __( 'Search Items', 'wp-book' ),
+			'not_found'                  => __( 'Not Found', 'wp-book' ),
+			'no_terms'                   => __( 'No items', 'wp-book' ),
+			'items_list'                 => __( 'Items list', 'wp-book' ),
+			'items_list_navigation'      => __( 'Items list navigation', 'wp-book' ),
 		);
 		$args   = array(
 			'labels'            => $labels,
@@ -406,7 +406,7 @@ class Wp_Book_Admin {
 		?>
 		<div class="wrap">
 		<?php
-		if ( isset( $_GET['settings-updated'] ) && true == $_GET['settings-updated'] ) {
+		if ( isset( $_GET['settings-updated'] ) && true === $_GET['settings-updated'] ) {
 			?>
 			<div class="notice notice-success"><p>Settings Saved Successfully</p></div>
 			<?php
@@ -416,12 +416,12 @@ class Wp_Book_Admin {
 			<p>Manages all the settings of book plugin</p>
 
 			<form method="post" action="options.php">
-			   <?php settings_fields( 'book_settings_group' ); ?>
+				<?php settings_fields( 'book_settings_group' ); ?>
 				<table class="form-table">
 					<tbody>
 						<tr>
 							<th scope="row"><label for="book_currency">Currency</label></th>
-						   <?php $currency_option = get_option( 'book_currency' ); ?>
+							<?php $currency_option = get_option( 'book_currency' ); ?>
 							<td>
 								<select name="book_currency" id="book_currency" class="regular-text">
 									<option value="Indian Rupees" <?php selected( $currency_option, 'Indian Rupees' ); ?> >Indian Rupees</option>
@@ -433,7 +433,7 @@ class Wp_Book_Admin {
 						<tr>
 							<th scope="row"><label for="book_no_pages">No. of Books (per page)</label></th>
 							<td>
-								<input type="text" class="regular-text" name="book_no_pages" id="book_no_pages" placeholder="No. of Books" value="<?php echo get_option( 'book_no_pages' ); ?>">
+								<input type="text" class="regular-text" name="book_no_pages" id="book_no_pages" placeholder="No. of Books" value="<?php echo esc_html( get_option( 'book_no_pages' ) ); ?>">
 							</td>
 						</tr>
 						<tr>
@@ -444,7 +444,7 @@ class Wp_Book_Admin {
 			</form>
 		</div>
 		<?php
-		echo ob_get_clean();
+		echo esc_html( ob_get_clean() );
 	}
 
 
@@ -454,5 +454,39 @@ class Wp_Book_Admin {
 	public function register_book_settings() {
 		register_setting( 'book_settings_group', 'book_currency' );
 		register_setting( 'book_settings_group', 'book_no_pages' );
+	}
+
+	/**
+	 * Custom dashboard widget.
+	 */
+	public function wp1_custom_dashboard_widgets() {
+		wp_add_dashboard_widget( 'book_widget', 'Category - Top 5 Books', array( $this, 'wp1_custom_dashboard' ) );
+	}
+
+	/**
+	 * Provides top 5 categories of book post type based on their count.
+	 */
+	public function wp1_custom_dashboard() {
+		global $wpdb;
+		$get_term_ids   = $wpdb->get_col( "SELECT term_id FROM `wp_term_taxonomy` WHERE taxonomy = 'book-category' ORDER BY count DESC LIMIT 5" );// db call ok; no-cache ok.
+		$top_terms_name = array();
+		$top_terms_slug = array();
+		foreach ( $get_term_ids as $id ) {
+			$get_term = $wpdb->get_row( $wpdb->prepare( 'SELECT name, slug FROM wp_terms WHERE term_id = %d', $id ) );// db call ok; no-cache ok.
+			array_push( $top_terms_name, $get_term->name );
+			array_push( $top_terms_slug, $get_term->slug );
+		}
+		?>
+		<ol>
+			<?php
+			$use_count = count( $top_terms_name );
+			for ( $i = 0; $i < $use_count; $i++ ) {
+				?>
+				<li style='font-size:15px;'> <a target='_blank' href=" <?php echo esc_url( get_site_url() ); ?>/book-category/<?php echo esc_attr( $top_terms_slug[ $i ] ); ?>"><?php echo esc_attr( $top_terms_name[ $i ] ); ?></li>
+				<?php
+			}
+			?>
+		</ol>
+		<?php
 	}
 }

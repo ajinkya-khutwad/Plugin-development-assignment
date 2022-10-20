@@ -125,6 +125,8 @@ class Wp_Book {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-wp-book-public.php';
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'widgets/class-wp1-book-widget.php';
+
 		$this->loader = new Wp_Book_Loader();
 
 	}
@@ -176,8 +178,12 @@ class Wp_Book {
 
 		// action hook add admin settings.
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'wp1_add_admin_menu' );
+
 		// action hook to register the settings for book.
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_book_settings' );
+
+		// action hook to display widget on dashboard as top 5 categories of book post type based on their count.
+		$this->loader->add_action( 'wp_dashboard_setup', $plugin_admin, 'wp1_custom_dashboard_widgets' );
 
 	}
 
@@ -194,8 +200,12 @@ class Wp_Book {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
 		// Create Shortcode named book to show information about book.
 		add_shortcode( 'book', array( $plugin_public, 'load_book_content' ) );
+
+		// action hook to display custom widget which shows books of selected category.
+		add_action( 'widgets_init', 'wp1_book_widget_init' );
 
 	}
 
