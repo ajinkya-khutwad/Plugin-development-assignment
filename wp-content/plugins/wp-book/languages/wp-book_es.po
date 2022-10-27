@@ -1,69 +1,37 @@
 # Blank WordPress Pot
 # Copyright 2014 ...
 # This file is distributed under the GNU General Public License v3 or later.
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: "
-"Blank WordPress Pot "
-"v1.0.0\n"
-"Report-Msgid-Bugs-To: "
-"Translator Name "
-"<translations@example."
-"com>\n"
-"POT-Creation-Date: "
-"2022-10-20 16:20+0530\n"
+"Project-Id-Version: Blank WordPress Pot v1.0.0\n"
+"Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
+"POT-Creation-Date: 2022-10-20 16:20+0530\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Your "
-"Name <you@example.com>\n"
-"Language-Team: Your Team "
-"<translations@example."
-"com>\n"
-"Language: en_US\n"
+"Language-Team: Your Team <translations@example.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/"
-"plain; charset=UTF-8\n"
-"Content-Transfer-"
-"Encoding: 8bit\n"
-"Plural-Forms: "
-"nplurals=2; plural=n != "
-"1;\n"
-"X-Textdomain-Support: "
-"yesX-Generator: Poedit "
-"1.6.4\n"
-"X-Poedit-SourceCharset: "
-"UTF-8\n"
-"X-Poedit-KeywordsList: "
-"__;_e;esc_html_e;"
-"esc_html_x:1,2c;"
-"esc_html__;esc_attr_e;"
-"esc_attr_x:1,2c;"
-"esc_attr__;_ex:1,2c;"
-"_nx:4c,1,2;"
-"_nx_noop:4c,1,2;_x:1,2c;"
-"_n:1,2;_n_noop:1,2;"
-"__ngettext:1,2;"
-"__ngettext_noop:1,2;_c,"
-"_nc:4c,1,2\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Textdomain-Support: yesX-Generator: Poedit 1.6.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Generator: Poedit 2.3\n"
-"X-Poedit-"
-"SearchPath-0: .\n"
+"Last-Translator: \n"
+"Language: es\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: admin/class-wp-book-admin.php:109
-msgctxt ""
-"Post Type General Name"
+msgctxt "Post Type General Name"
 msgid "Books"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:110
-msgctxt ""
-"Post Type Singular Name"
+msgctxt "Post Type Singular Name"
 msgid "Book"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:111
-#: admin/class-wp-book-admin.php:112
+#: admin/class-wp-book-admin.php:111 admin/class-wp-book-admin.php:112
 #: admin/class-wp-book-admin.php:138
 msgid "Book"
 msgstr ""
@@ -76,8 +44,7 @@ msgstr ""
 msgid "Item Attributes"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:115
-#: admin/class-wp-book-admin.php:173
+#: admin/class-wp-book-admin.php:115 admin/class-wp-book-admin.php:173
 #: admin/class-wp-book-admin.php:206
 msgid "Parent Item:"
 msgstr ""
@@ -86,8 +53,7 @@ msgstr ""
 msgid "All Books"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:117
-#: admin/class-wp-book-admin.php:118
+#: admin/class-wp-book-admin.php:117 admin/class-wp-book-admin.php:118
 msgid "Add New Book"
 msgstr ""
 
@@ -132,13 +98,11 @@ msgid "Set featured image"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:129
-msgid ""
-"Remove featured image"
+msgid "Remove featured image"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:130
-msgid ""
-"Use as featured image"
+msgid "Use as featured image"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:131
@@ -146,8 +110,7 @@ msgid "Insert into item"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:132
-msgid ""
-"Uploaded to this item"
+msgid "Uploaded to this item"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:133
@@ -155,8 +118,7 @@ msgid "Books list"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:134
-msgid ""
-"Books list navigation"
+msgid "Books list navigation"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:135
@@ -164,19 +126,16 @@ msgid "Filter Books list"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:139
-msgid ""
-"Post Type Description"
+msgid "Post Type Description"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:168
-msgctxt ""
-"Taxonomy General Name"
+msgctxt "Taxonomy General Name"
 msgid "Book Categories"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:169
-msgctxt ""
-"Taxonomy Singular Name"
+msgctxt "Taxonomy Singular Name"
 msgid "Book Category"
 msgstr ""
 
@@ -184,99 +143,77 @@ msgstr ""
 msgid "Book Category"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:171
-#: admin/class-wp-book-admin.php:204
+#: admin/class-wp-book-admin.php:171 admin/class-wp-book-admin.php:204
 msgid "All Items"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:172
-#: admin/class-wp-book-admin.php:205
+#: admin/class-wp-book-admin.php:172 admin/class-wp-book-admin.php:205
 msgid "Parent Item"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:174
-#: admin/class-wp-book-admin.php:207
+#: admin/class-wp-book-admin.php:174 admin/class-wp-book-admin.php:207
 msgid "New Item Name"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:175
-#: admin/class-wp-book-admin.php:208
+#: admin/class-wp-book-admin.php:175 admin/class-wp-book-admin.php:208
 msgid "Add New Item"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:176
-#: admin/class-wp-book-admin.php:209
+#: admin/class-wp-book-admin.php:176 admin/class-wp-book-admin.php:209
 msgid "Edit Item"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:177
-#: admin/class-wp-book-admin.php:210
+#: admin/class-wp-book-admin.php:177 admin/class-wp-book-admin.php:210
 msgid "Update Item"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:178
-#: admin/class-wp-book-admin.php:211
+#: admin/class-wp-book-admin.php:178 admin/class-wp-book-admin.php:211
 msgid "View Item"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:179
-#: admin/class-wp-book-admin.php:212
-msgid ""
-"Separate items with "
-"commas"
+#: admin/class-wp-book-admin.php:179 admin/class-wp-book-admin.php:212
+msgid "Separate items with commas"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:180
-#: admin/class-wp-book-admin.php:213
+#: admin/class-wp-book-admin.php:180 admin/class-wp-book-admin.php:213
 msgid "Add or remove items"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:181
-#: admin/class-wp-book-admin.php:214
-msgid ""
-"Choose from the most used"
+#: admin/class-wp-book-admin.php:181 admin/class-wp-book-admin.php:214
+msgid "Choose from the most used"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:182
-#: admin/class-wp-book-admin.php:215
+#: admin/class-wp-book-admin.php:182 admin/class-wp-book-admin.php:215
 msgid "Popular Items"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:183
-#: admin/class-wp-book-admin.php:216
+#: admin/class-wp-book-admin.php:183 admin/class-wp-book-admin.php:216
 msgid "Search Items"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:184
-#: admin/class-wp-book-admin.php:217
+#: admin/class-wp-book-admin.php:184 admin/class-wp-book-admin.php:217
 msgid "Not Found"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:185
-#: admin/class-wp-book-admin.php:218
+#: admin/class-wp-book-admin.php:185 admin/class-wp-book-admin.php:218
 msgid "No items"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:186
-#: admin/class-wp-book-admin.php:219
+#: admin/class-wp-book-admin.php:186 admin/class-wp-book-admin.php:219
 msgid "Items list"
 msgstr ""
 
-#: admin/class-wp-book-admin.php:187
-#: admin/class-wp-book-admin.php:220
-msgid ""
-"Items list navigation"
+#: admin/class-wp-book-admin.php:187 admin/class-wp-book-admin.php:220
+msgid "Items list navigation"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:201
-msgctxt ""
-"Taxonomy General Name"
+msgctxt "Taxonomy General Name"
 msgid "Book Tags"
 msgstr ""
 
 #: admin/class-wp-book-admin.php:202
-msgctxt ""
-"Taxonomy Singular Name"
+msgctxt "Taxonomy Singular Name"
 msgid "Book Tag"
 msgstr ""
 
